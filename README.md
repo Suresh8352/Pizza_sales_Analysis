@@ -59,11 +59,25 @@
                 FROM pizza
                 GROUP BY pizza_category
                 ORDER BY Total_Quantity_Sold DESC
-**G. TOP FIVE(5) PIZZA BY REVUNUE**
+**G. TOP FIVE(5) PIZZA by Revenue**
+    
                     SELECT  pizza_name, SUM(total_price) AS Total_Revenue
                     FROM pizza
                     GROUP BY pizza_name
                     ORDER BY Total_Revenue DESC
                     LIMIT 5;
+**H. Bottom five pizzas by revenue**
 
+                SELECT  pizza_name, SUM(total_price) AS Total_Revenue
+                FROM pizza
+                GROUP BY pizza_name
+                ORDER BY Total_Revenue ASC 
+                LIMIT 5
 
+**I. Bottom five pizzas by order**
+    
+                SELECT pizza_name, COUNT(DISTINCT order_id) AS Total_Orders
+                FROM pizza
+                GROUP BY pizza_name
+                ORDER BY Total_Orders DESC
+                limit 5;
