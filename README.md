@@ -2,7 +2,7 @@
 # Quries
 **A. KPI's**
 
-   **Total Revenue**
+     **Total Revenue**
    
      SELECT sum(total_price) as TOTAL_Revenue from pizza;                                    ---> 817860.049999993
   **Average Order Value**
