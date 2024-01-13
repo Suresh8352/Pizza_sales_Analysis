@@ -1,28 +1,28 @@
-USE PizzaSales
-
+--table name 'Pizza'
+--MySQL
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --Summary
 
 SELECT COUNT (Order_id) AS Total_Orders, COUNT (DISTINCT pizza_name) AS Number_of_pizza_types, 
 		SUM (Quantity) AS Total_Quantity_Sold, ROUND (SUM (Total_price),2) AS Total_revenue,ROUND (AVG (Total_price),2) AS Average_revenue
-FROM Sales
+FROM pizza
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --Orders by time of day
 
 SELECT DATEPART(HOUR, order_time) AS Time_of_Day, COUNT (Order_id) AS Number_of_Orders, 
 		SUM (Quantity) AS Number_of_Pizzas,ROUND (SUM (Total_price),2) AS Total_revenue
-FROM sales
+FROM pizza
 GROUP BY DATEPART (HOUR, order_time)
 ORDER BY 2 DESC
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Orders by day of week
 
-SELECT DATENAME (WEEKDAY, order_date) AS Day_of_Week, COUNT (Order_id) AS Number_of_Orders,
+SELECT DAYNAME (order_date) AS Day_of_Week, COUNT (Order_id) AS Number_of_Orders,
 		SUM (Quantity) AS Number_of_Pizzas, ROUND (SUM (Total_price),2) AS Total_revenue
-FROM sales
-GROUP BY DATENAME (WEEKDAY, order_date)
+FROM PIZZA
+GROUP BY DAYNAME (order_date)
 ORDER BY 2 DESC
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
