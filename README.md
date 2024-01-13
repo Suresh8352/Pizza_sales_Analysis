@@ -39,6 +39,7 @@
      GROUP BY monthNAME(order_date);
      --> Gives the montly total orders
 **D.Percentage of sale in each category of pizza**
+
         SELECT pizza_category, CAST(SUM(total_price) AS DECIMAL(10,2)) as total_revenue,
         CAST(SUM(total_price) * 100 / (SELECT SUM(total_price) from pizza) AS DECIMAL(10,2)) AS PCT
         FROM pizza
