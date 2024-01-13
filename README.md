@@ -54,6 +54,7 @@
         GROUP BY pizza_size
         ORDER BY pizza_size
 **F. Total Pizzas Sold by Pizza Category**
+
                 SELECT pizza_category, SUM(quantity) as Total_Quantity_Sold
                 FROM pizza
                 GROUP BY pizza_category
