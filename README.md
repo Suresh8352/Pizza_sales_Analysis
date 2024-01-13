@@ -17,11 +17,13 @@
 
 
 **B.Daily Trend for Total Orders**
+
      SELECT DAYNAME(order_date) AS order_day, COUNT(DISTINCT order_id) AS total_orders
      FROM pizza
      GROUP BY DAYNAME(order_date);
      -->Gives the day wise total order
 **C.Monthly Trends**
+
      select MonthNAME(order_date) as Month_Name, COUNT(DISTINCT order_id) as Total_Orders
      from pizza
      GROUP BY monthNAME(order_date);
