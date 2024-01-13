@@ -1,4 +1,4 @@
-###Pizza_sales_Analysis
+**Pizza_sales_Analysis**
 # Quries
 **KPI's**
 1. **Total Revenue**:
