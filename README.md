@@ -8,7 +8,7 @@
          
       **Average Order Value**
   
-     SELECT (SUM(total_price) / COUNT(DISTINCT order_id)) AS Avg_order_Value FROM pizza;      ---> 38.307262295081635
+         SELECT (SUM(total_price) / COUNT(DISTINCT order_id)) AS Avg_order_Value FROM pizza;      ---> 38.307262295081635
      
   **Total Pizza sold**
   
