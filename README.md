@@ -1,6 +1,6 @@
 **Pizza_sales_Analysis**
 # Quries
-**KPI's**
+**A. KPI's**
 1. **Total Revenue**:
      SELECT sum(total_price) as TOTAL_Revenue from pizza;                                    ---> 817860.049999993
 2. **Average Order Value**
@@ -13,7 +13,18 @@
      SELECT CAST(CAST(SUM(quantity) AS DECIMAL(10,2)) / 
      CAST(COUNT(DISTINCT order_id) AS DECIMAL(10,2)) AS DECIMAL(10,2))
      AS Avg_Pizzas_per_order
-     FROM pizza                                                               -----> ---->2.32
+     FROM pizza                                                               ----->    2.32
 
-7. 
+
+**B.Daily Trend for Total Orders**
+     SELECT DAYNAME(order_date) AS order_day, COUNT(DISTINCT order_id) AS total_orders
+     FROM pizza
+     GROUP BY DAYNAME(order_date);
+     -->Gives the day wise total order
+**C.Monthly Trends**
+     select MonthNAME(order_date) as Month_Name, COUNT(DISTINCT order_id) as Total_Orders
+     from pizza
+     GROUP BY monthNAME(order_date);
+     --> Gives the montly total orders 
+
 
